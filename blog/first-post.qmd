@@ -1,0 +1,8 @@
+---
+title: "My First Post"
+description: "Welcome to my blog!"
+date: 2025-12-02
+categories: [Intro]
+---
+
+Content goes here.
