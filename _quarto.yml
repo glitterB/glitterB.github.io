@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 website:
-  title: "Rushikesh Kulkarni"
+  title: "Portfolio"
   navbar:
     left:
       - href: index.qmd

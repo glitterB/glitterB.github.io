@@ -1,5 +1,17 @@
 ---
-title: "About"
+title: "About Me"
 ---
 
-About this site
+My name is **Rushikesh Kulkarni**, and I am pursuing a Master of Technology at **Indian Institute of Technology, Kharagpur**.  
+
+After working in [SMS Group, Pune Office](https://www.sms-group.com/) for two years, I decided to pursue masters degree in Manufacturing Science and Engineering. Prior experience as a **Design Engineer** in steel industry laid a stong foundation in engineering design, manufacturing processes & problem solving.  
+My current work involves exploring ways to cool down welded parts, aiming to reduce distortion and increase productivity.
+
+I maintain an active portfolio of **projects**, and I enjoy sharing insights through my blog.  
+I am always open to **collaboration and professional discussions** in the domains of engineering.
+
+Engineering is awesome!
+
+---
+---
+

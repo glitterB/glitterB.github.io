@@ -1,12 +1,35 @@
 ---
-title: "Welcome to my Website"
+title: "Rushikesh Kulkarni"
 ---
 
-# Welcome 👋
+# Welcome
 
-Hi! I am **Rushikesh Kulkarni**, currently pursuing MTech at IIT Kharagpur. I like sharing projects, tutorials, and experiments.
+Hello there! My name is **Rushikesh Kulkarni**, currently pursuing MTech at IIT Kharagpur. I like sharing projects & writting blogs.
 
 ---
+
+# Featured Projects
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+
+<div style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 10px; padding: 15px; box-shadow: 2px 2px 6px rgba(0,0,0,0.1);">
+<img src="images/home.jpg" alt="Robot Arm" style="width:100%; border-radius: 8px;">
+<h3>Microbot Manipulator Simulation</h3>
+<p>Forward and inverse kinematics implemented in CoppeliaSim to demonstrate robotic control and automation.</p>
+<a href="images/home2.jpg">View Project →</a>
+</div>
+
+<!-- <div style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 10px; padding: 15px; box-shadow: 2px 2px 6px rgba(0,0,0,0.1);">
+<img src="images/home.jpg" alt="AM Tool" style="width:100%; border-radius: 8px;">
+<h3>AM Parameter Optimization Tool</h3>
+<p>Python and ML-based tool for optimizing additive manufacturing parameters for improved performance and efficiency.</p>
+<a href="/projects/additive-manufacturing-tool.qmd">View Project →</a>
+</div> -->
+
+</div>
+
+---
+
 
 [See all Projects](/projects/index.qmd){.btn}
 [Read the Blog](/blog/index.qmd){.btn}
