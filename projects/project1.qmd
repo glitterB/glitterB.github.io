@@ -1,0 +1,7 @@
+---
+title: "Project Name"
+description: "One-line summary"
+categories: [Tag1, Tag2]
+---
+
+Detailed description, images, code snippets, results, links.

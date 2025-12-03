@@ -2,6 +2,9 @@
   "listingMap": {
     "blog\\index.qmd": [
       "."
+    ],
+    "projects\\index.qmd": [
+      "."
     ]
   }
 }

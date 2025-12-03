@@ -1,8 +1,0 @@
----
-title: "My Second Post"
-description: "Another post"
-date: 2025-12-03
-categories: [General]
----
-
-More content here.

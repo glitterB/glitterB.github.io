@@ -1,24 +1,17 @@
 [
   {
+    "objectID": "projects/project1.html",
+    "href": "projects/project1.html",
+    "title": "Project Name",
+    "section": "",
+    "text": "Detailed description, images, code snippets, results, links."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to my Website",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "My First Post\n\n\nWelcome to my blog!\n\n\n\n\n\nDec 2, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMy Second Post\n\n\nAnother post\n\n\n\n\n\nDec 3, 2025\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
+    "text": "Welcome 👋\nHi! I am Rushikesh Kulkarni, currently pursuing MTech at IIT Kharagpur. I like sharing projects, tutorials, and experiments.\n\nSee all Projects Read the Blog\n\n\nGet in touch"
   },
   {
     "objectID": "blog/first-post.html",
@@ -28,10 +21,24 @@
     "text": "Content goes here."
   },
   {
-    "objectID": "blog/second-post.html",
-    "href": "blog/second-post.html",
-    "title": "My Second Post",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "More content here."
+    "text": "About this site"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "My First Post\n\n\nWelcome to my blog!\n\n\n\n\n\nDec 2, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Project Name\n\n\nOne-line summary\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
