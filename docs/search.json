@@ -2,16 +2,16 @@
   {
     "objectID": "projects/project1.html",
     "href": "projects/project1.html",
-    "title": "Project Name",
+    "title": "Mental Math Tool",
     "section": "",
-    "text": "Detailed description, images, code snippets, results, links."
+    "text": "To learn more\nClick here"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Rushikesh Kulkarni",
     "section": "",
-    "text": "Welcome\nHello there! My name is Rushikesh Kulkarni, currently pursuing MTech at IIT Kharagpur. I like sharing projects & writting blogs.\n\n\n\nFeatured Projects\n\n\n\n\nMicrobot Manipulator Simulation\n\n\nForward and inverse kinematics implemented in CoppeliaSim to demonstrate robotic control and automation.\n\nView Project →\n\n\n\n\nSee all Projects Read the Blog\n\n\n\nGet in touch"
+    "text": "Welcome\nHello there! My name is Rushikesh Kulkarni, currently pursuing MTech at IIT Kharagpur. I like sharing projects & writting blogs.\n\n\n\nLogo\n\n\n\n\n\nFeatured Projects\n\n\n\n\nMicrobot Manipulator Simulation\n\n\nForward and inverse kinematics implemented in CoppeliaSim to demonstrate robotic control and automation.\n\nView Project →\n\n\n\n\nSee all Projects Read the Blog\n\n\n\nGet in touch"
   },
   {
     "objectID": "blog/first-post.html",
@@ -39,6 +39,6 @@
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Project Name\n\n\nOne-line summary\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Mental Math Tool\n\n\nToo made for practicing arithmatcs\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
