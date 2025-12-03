@@ -36,7 +36,8 @@ Hello there! My name is **Rushikesh Kulkarni**, currently pursuing MTech at IIT 
 
 ---
 
-### Get in touch
+# Get in touch
+
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://in.linkedin.com/in/rushikesh-kulkarni-0a1455212)
 [![Twitter](https://img.shields.io/badge/X-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/rushi_k_7)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white)](https://www.instagram.com/rushi_k_0/)
