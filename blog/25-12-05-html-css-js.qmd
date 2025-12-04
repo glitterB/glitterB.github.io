@@ -1,0 +1,23 @@
+---
+title: "My journey into JavaScript and creative coding"
+description: "From Grasshopper lessons to p5.js sketches"
+date: 2025-12-05
+categories: [General, HTML, CSS, JavaScript, P5.js]
+---
+
+Back in 2020 during COVID-19 lockdown, I stumbled upon Google's _Grasshopper_ app. It was designed to teach JavaScript through small, interactive challenges. I was curious, so I tried it — and within the first few lessons I felt completely lost. Nothing made sense, and I quickly gave up.
+
+But after a few weeks, something inside me pushed me to try again. This time, while doing the Grasshopper lessons, I also watched a YouTube video showcasing cool things people were building with HTML, CSS, and JavaScript. And suddenly… something _clicked_. For the first time, JavaScript didn’t feel like a foreign language. I finished the entire Grasshopper course.
+
+When I wrote my very first HTML file, I simply pasted the JavaScript code into HTML file — and of course, nothing happened. I didn’t even know the basics of HTML! I almost gave up again. Then a friend (who works in a reputed IT company) introduced me to fundamental HTML tags. That tiny explanation opened a huge door.
+My first ever working JavaScript program was, `alert("Hello World")`. Seeing that alert pop up on the screen felt magical. It was a small program, but to me, it meant _I made the computer do something_
+
+At that point, my learning truly began and I picked up CSS, learned how HTML pages actually work, and slowly started combining everything. My first project was a simple form (check out [here](https://github.com/glitterB/Pumpkin_Party_Form)) — just HTML and CSS — created to understand tags and layout. After that came a **Mental Math Tool** (check out [here](https://github.com/glitterB/mental-math-practice-tool)), where I finally used all three: HTML, CSS, and JavaScript. (I even updated it recently!).
+
+In Google's _Grasshopper_ app, there were two modules on animations using D3.js; which I found bit difficult to understand. So I explored animations using HTML canvas. My first ever project for animation was simulating Solar System with Sun, Moon and the Earth. Seeing those celestial bodies orbit on screen was incredibly satisfying (see it yourself [here](https://github.com/glitterB/Solar_System)).
+
+These days, I don’t use raw HTML and CSS as much. Instead, I use **p5.js** to create generative art and fun simulations. It gives me the freedom to turn ideas into visuals quickly. I often follow tutorials from [_The Coding Train_](https://youtube.com/@thecodingtrain?si=Ns8hlVlyuggPPwui), which continues to inspire me.
+
+What started as frustration during a global lockdown turned into a passion for coding and creative expression. And the journey is still going on. I have documented the course content from Google Grasshopper app (app is shut down). You can check it out by clicking [here](https://github.com/glitterB/google-grasshopper).
+
+---
