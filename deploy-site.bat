@@ -27,5 +27,5 @@ git diff-index --quiet HEAD || git commit -m "Update source files on %DATE% %TIM
 git push origin main
 
 echo.
-echo Deployment complete! Your gh-pages branch is updated.
+echo Deployment complete! Your main branch is updated.
 pause

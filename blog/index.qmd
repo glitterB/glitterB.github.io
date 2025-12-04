@@ -2,4 +2,7 @@
 title: "Blog"
 listing:
   contents: .
+  sort: "date desc"
+  categories: true
+  sort-ui: false
 ---
