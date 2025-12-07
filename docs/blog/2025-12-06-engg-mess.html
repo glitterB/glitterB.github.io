@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-12-06">
+<meta name="description" content="Joy hidden in a mess">
 
-<title>Blog – Rushikesh | ME</title>
+<title>Engineering – Rushikesh | ME</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -70,65 +70,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -161,7 +103,7 @@ window.Quarto = {
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
@@ -179,22 +121,36 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Q1NT">CSS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2VuZXJhbA==">General <span class="quarto-category-count">(3)</span></div><div class="category" data-category="SFRNTA==">HTML <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SmF2YVNjcmlwdA==">JavaScript <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UDUuanM=">P5.js <span class="quarto-category-count">(1)</span></div></div></div>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
-</div>
+<h1 class="title">Engineering</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">General</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Joy hidden in a mess
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 6, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -204,104 +160,16 @@ window.Quarto = {
 </header>
 
 
+<p>Engineering is one of humanity’s greatest assets. From landing on Mars to exploring the Mariana Trench, none of it would be possible without the mind of engineers. While scientists try to understand why the world behaves a certain way, engineers use those principles to solve real problems, and that journey isn’t always pleasant.</p>
+<p>In fact, whatever you think <em>might</em> go wrong usually <em>goes</em> wrong. Yet when engineering action works, it gives a great sense of joy.</p>
+<p>The process starts with a simple proof of concept, just to note what works and what fails. Through countless iterations, trial and error, and messy experiments, engineers reach closer to a solution. Failure isn’t just expected; it’s a natural and important part of the process. As Thomas Edison famously said, <em>“I have not failed. I’ve just found 10,000 ways that won’t work.”</em></p>
+<p>Instead of tackling a problem all at once, engineers break it into manageable steps, ask hard questions, think critically, and stay curious. When something breaks—and it will—they reflect on why. After failing repeatedly, anyone might feel stupid. But there’s nothing wrong with that feeling. It simply means you are learning. In the end, resilience is what makes repeated failures into success. And that transformation is what makes engineering so deeply rewarding.</p>
+<p>And the best part is, you don’t need a college degree to become an engineer. If you’re curious enough, ask hard questions, and learn specific set of skills which you can apply to solve set of problems, you’re already thinking like an engineer. As George Bernard Shaw put it, <em>“Life isn’t about finding yourself. Life is about creating yourself.”</em> With curiosity, resilience, and a little bit of luck, you can create yourself into an engineer.</p>
+<hr>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="R2VuZXJhbA==" data-listing-date-sort="1764959400000" data-listing-file-modified-sort="1765044311612" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="280">
-<div class="thumbnail"><a href="../blog/2025-12-06-engg-mess.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2025-12-06-engg-mess.html" class="no-external">Engineering</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('R2VuZXJhbA=='); return false;">General</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/2025-12-06-engg-mess.html" class="no-external">
-<p>Joy hidden in a mess</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/2025-12-06-engg-mess.html" class="no-external">
-<div class="listing-date">
-Dec 6, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="R2VuZXJhbCUyQ0hUTUwlMkNDU1MlMkNKYXZhU2NyaXB0JTJDUDUuanM=" data-listing-date-sort="1764873000000" data-listing-file-modified-sort="1764874114407" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="411">
-<div class="thumbnail"><a href="../blog/25-12-05-html-css-js.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/25-12-05-html-css-js.html" class="no-external">My journey into JavaScript and creative coding</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('R2VuZXJhbA=='); return false;">General</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('SFRNTA=='); return false;">HTML</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q1NT'); return false;">CSS</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('SmF2YVNjcmlwdA=='); return false;">JavaScript</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UDUuanM='); return false;">P5.js</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/25-12-05-html-css-js.html" class="no-external">
-<p>From Grasshopper lessons to p5.js sketches</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/25-12-05-html-css-js.html" class="no-external">
-<div class="listing-date">
-Dec 5, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="R2VuZXJhbA==" data-listing-date-sort="1740162600000" data-listing-file-modified-sort="1764832203456" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="715">
-<div class="thumbnail"><a href="../blog/25-02-22-gate-learn.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/25-02-22-gate-learn.html" class="no-external">GATE 2025 Learnings</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('R2VuZXJhbA=='); return false;">General</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/25-02-22-gate-learn.html" class="no-external">
-<p>My larnings while preparing for the GATE</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/25-02-22-gate-learn.html" class="no-external">
-<div class="listing-date">
-Feb 22, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
