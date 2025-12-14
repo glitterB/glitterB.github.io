@@ -4,41 +4,46 @@ title: "Rushikesh Kulkarni"
 
 # Welcome
 
-![](images/icon.jpg)
+<img src="images/icon.jpg" style="width:20%; border-radius:50%;">
 
-Hello there! My name is **Rushikesh Kulkarni**, currently pursuing MTech at IIT Kharagpur. I like sharing projects & writing blogs.
-
----
-
-<!-- # Featured Projects
-
-<div style="display: flex; flex-wrap: wrap; gap: 20px;">
-
-<div style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 10px; padding: 15px; box-shadow: 2px 2px 6px rgba(0,0,0,0.1);">
-<img src="../images/home.jpg" alt="Robot Arm" style="width:100%; border-radius: 8px;">
-<h3>Microbot Manipulator Simulation</h3>
-<p>Forward and inverse kinematics implemented in CoppeliaSim to demonstrate robotic control and automation.</p>
-<a href="../projects/project1.qmd">View Project →</a>
-</div> -->
-
-<!-- <div style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 10px; padding: 15px; box-shadow: 2px 2px 6px rgba(0,0,0,0.1);">
-<img src="images/home.jpg" alt="AM Tool" style="width:100%; border-radius: 8px;">
-<h3>AM Parameter Optimization Tool</h3>
-<p>Python and ML-based tool for optimizing additive manufacturing parameters for improved performance and efficiency.</p>
-<a href="/projects/additive-manufacturing-tool.qmd">View Project →</a>
-</div> -->
-
-</div>
+Hello there! My name is **Rushikesh Kulkarni**, currently pursuing MTech at IIT Kharagpur. I am interested in learning by building projects and writing blogs.
 
 ---
 
+## What you’ll find here
 
-[See all Projects](/projects/index.qmd){.btn}
-[Read the Blog](/blog/index.qmd){.btn}
+- Projects: academic and personal work, simulations, and tools  
+- Blog: technical write-ups, tutorials, and learning notes  
+- Research & Learning: topics I’m currently exploring  
+- About: my background, interests, and journey so far  
 
 ---
 
-# Get in touch
+## Highlights
+
+### Projects
+
+Fuzzy sets implemented in Python.  
+[View project →](/projects/project1.qmd)
+
+
+### Blog posts
+
+My learnings while preparing for GATE 2025.  
+[Read post →](/25-02-22-gate-learn.qmd)
+
+
+---
+
+## Explore more
+
+[All Projects](/projects/index.qmd){.btn}   
+[All Blog Posts](/blog/index.qmd){.btn}   
+[About Me](/about.qmd){.btn}   
+
+---
+
+## Get in touch
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://in.linkedin.com/in/rushikesh-kulkarni-0a1455212)
 [![Twitter](https://img.shields.io/badge/X-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/rushi_k_7)
@@ -46,9 +51,5 @@ Hello there! My name is **Rushikesh Kulkarni**, currently pursuing MTech at IIT 
 
 
 <center>
-<p>&copy; 2025 Rushikesh Kulkarni. All Rights Reserved.</p>
-</center>
-
-<center>
-<p>Made with [Quarto](https://quarto.org/)</p>
+<p>&copy; 2025 Rushikesh Kulkarni | Built with <a href="https://quarto.org/">Quarto</a></p>
 </center>
