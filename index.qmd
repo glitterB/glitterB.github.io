@@ -10,36 +10,19 @@ Hello there! My name is **Rushikesh Kulkarni**, currently pursuing MTech at IIT 
 
 ---
 
-## What you’ll find here
-
-- Projects: academic and personal work, simulations, and tools  
-- Blog: technical write-ups, tutorials, and learning notes  
-- Research & Learning: topics I’m currently exploring  
-- About: my background, interests, and journey so far  
-
----
-
 ## Highlights
 
 ### Projects
 
 Fuzzy sets implemented in Python.  
-[View project →](/projects/project1.qmd)
+[View project →](projects/project1-fuzzy-set.qmd)
 
 
 ### Blog posts
 
 My learnings while preparing for GATE 2025.  
-[Read post →](/25-02-22-gate-learn.qmd)
+[Read post →](blog/25-02-22-gate-learn.qmd)
 
-
----
-
-## Explore more
-
-[All Projects](/projects/index.qmd){.btn}   
-[All Blog Posts](/blog/index.qmd){.btn}   
-[About Me](/about.qmd){.btn}   
 
 ---
 
@@ -49,6 +32,7 @@ My learnings while preparing for GATE 2025.
 [![Twitter](https://img.shields.io/badge/X-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/rushi_k_7)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white)](https://www.instagram.com/rushi_k_0/)
 
+---
 
 <center>
 <p>&copy; 2025 Rushikesh Kulkarni | Built with <a href="https://quarto.org/">Quarto</a></p>
