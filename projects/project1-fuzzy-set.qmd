@@ -1,0 +1,251 @@
+---
+title: "Fuzzy sets in Python"
+description: "A python code for implementing Fuzzy sets."
+categories: [Python, Fuzzy sets]
+---
+
+[1. Introduction](#1.-Introduction)   
+[2. What is Fuzzy set?](#2.-What-is-Fuzzy-set?)  
+[3. Fuzzy Operations](#3.-Fuzzy-Operations)   
+[4. References](#4.-References)
+
+---
+
+
+*Prerequisite: Basic understanding of classical set theory.*
+
+
+# 1. Introduction
+
+I completed the course _ME60353 – Knowledge Based Systems in Engineering_ at IIT Kharagpur, taught by Prof. D. K. Pratihar, where I learned about fuzzy set theory. I have implemented fuzzy sets in Python as part of personal mini project.
+
+### **Classical (Crisp) Set:-**  
+
+A classical set is an **unordered collection** of distinct elements—essentially, a collection of objects.
+
+**Examples:**
+- Set of all positive integers  
+- Set of all months in a year
+
+Mathematically, a set can be represented as:   
+
+$$A = \{~ a,e,i,o,u ~ \}$$
+
+# 2. What is a Fuzzy set?
+
+A fuzzy set is a collection of **ordered pairs**, where each element is associated with a membership value between 0 and 1.
+
+Mathematically, a fuzzy set is represented as:
+
+$$A =\{ (x,\mu_{S}(x)), x\in X\}$$
+
+Where $X$ is an Universal set and $\mu_{S}$ is membership function value.
+
+
+# 3. Fuzzy Operations
+
+Here, we will look into traditiona fuzzy operations along with respective python implementation.
+
+Let A and B be tow fuzzy sets defined on universal set X, then different Fuzzy set operations can be defined as follows,
+
+1. Subset:-  
+
+$$A\subset B \iff \mu_{A}(x)<\mu_{B}(x)$$
+
+```python
+def subset(self, other):
+    """Returns True if a fuzzy set is subset of another."""
+    if not isinstance(other, FuzzySet):
+        return NotImplemented
+    if self._elements.keys() != other._elements.keys():
+        return False
+    return all(self._elements[k] < other._elements[k] for k in self._elements)
+```
+2. Equal:-  
+
+$$A= B \iff \mu_{A}(x)=\mu_{B}(x)$$
+
+```python
+def __eq__(self, other):
+    """Returns True if two fuzzy sets have exactly the same elements and membership values."""
+    if not isinstance(other, FuzzySet):
+        return NotImplemented
+    if self._elements.keys() != other._elements.keys():
+        return False
+    return all(self._elements[k] == other._elements[k] for k in self._elements)
+```
+3. Complement:-  
+
+$$\bar A  = \{ x, 1-\mu_{A}(x)\}$$
+
+```python
+def complement(self):
+    """Returns the complement of this fuzzy set as a new FuzzySet."""
+    result = FuzzySet()
+    for k, v in self._elements.items():
+        result[k] = 1 - v
+    return result
+```
+4. Union:-  
+
+$$A\cup B = \{ x, max[\mu_{A}(x),\mu_{B}(x)] \}$$
+
+```python
+def union(self, other):
+    """Returns the union of two fuzzy sets as a new FuzzySet."""
+    result = FuzzySet()
+    keys = set(self._elements.keys()) | set(other._elements.keys())
+    for k in keys:
+        m1 = self._elements.get(k, 0)
+        m2 = other._elements.get(k, 0)
+        result[k] = max(m1, m2)
+    return result
+```
+
+5. Intersection:-  
+
+$$A\cup B = \{ x, min[\mu_{A}(x),\mu_{B}(x)] \}$$
+
+```python
+def intersection(self, other):
+    """Returns the intersection of two fuzzy sets as a new FuzzySet."""
+    result = FuzzySet()
+    keys = set(self._elements.keys()) & set(other._elements.keys())
+    for k in keys:
+        m1 = self._elements[k]
+        m2 = other._elements[k]
+        result[k] = min(m1, m2)
+    return result
+```
+6. Algebric Product:-  
+
+$$A\cdot B = \{ x,\mu_{A}(x)\cdot\mu_{B}(x) \}$$
+
+```python
+ def __mul__(self, other):
+    """Returns the multiplication of two fuzzy sets (product t-norm)
+    or scalar multiplication with a crisp number."""
+    result = FuzzySet()
+    
+    if isinstance(other, FuzzySet):
+        # FuzzySet × FuzzySet
+        keys = set(self._elements.keys()) | set(other._elements.keys())
+        for k in keys:
+            m1 = self._elements.get(k, 0)
+            m2 = other._elements.get(k, 0)
+            result[k] = m1 * m2
+        return result
+    ...
+```
+7. Multiplication by crisp number:-  
+
+$$c\cdot A = \{ x, c\cdot\mu_{A}(x)\}$$
+
+```python
+ def __mul__(self, other):
+    """Returns the multiplication of two fuzzy sets (product t-norm)
+    or scalar multiplication with a crisp number."""
+    result = FuzzySet()
+    ...
+    elif isinstance(other, (int, float)):
+        # FuzzySet × scalar
+        for k, v in self._elements.items():
+            val = v * other
+            result[k] = min(max(val, 0), 1)  # clamp into [0, 1]
+        return result
+```
+
+8. p<sup>th</sup> power:-  
+
+$$A^p = \{ x, \mu_{A}(x)^p\}$$
+
+```python
+def __pow__(self, p):
+    """Returns a new FuzzySet with membership values raised to the power p."""
+    if not isinstance(p, (int, float)):
+        return NotImplemented
+    if p < 0:
+        raise ValueError("Exponent must be non-negative for fuzzy sets.")
+    
+    result = FuzzySet()
+    for k, v in self._elements.items():
+        result[k] = v ** p
+    return result
+```
+9. Algebraic sum:-  
+
+$$A+B = \{ x,\mu_{A}(x)+\mu_{B}(x) \}$$
+
+```python
+def __add__(self, other):
+    """Returns the algebraic addition of two fuzzy sets as a new FuzzySet."""
+    result = FuzzySet()
+    keys = set(self._elements.keys()) | set(other._elements.keys())
+    for k in keys:
+        m1 = self._elements.get(k, 0)
+        m2 = other._elements.get(k, 0)
+        result[k] = m1+m2-(m1*m2)
+    return result
+```
+
+10. Algebraic difference:-  
+
+$$A-B = \{ x,\mu_{A}(x)-\mu_{B}(x) \}$$
+
+```python
+def __sub__(self, other):
+    """Returns the algebraic subtraction of two fuzzy sets as a new FuzzySet."""
+    result = FuzzySet()
+    keys = set(self._elements.keys()) | set(other._elements.keys())
+    for k in keys:
+        m1 = self._elements.get(k, 0)
+        m2 = other._elements.get(k, 0)
+        result[k] = m1-m2
+    return result
+```
+
+11. Bounded sum:-  
+
+$$A\oplus B = \{ x,\mu_{A}(x)\oplus \mu_{B}(x) \}$$
+
+$$\mu_{A}(x)\oplus \mu_{B}(x) =min[1,\mu_{A}(x)+\mu_{B}(x)]$$
+
+```python
+def bdsum (self, other):
+    """Returns the bounded sum of two fuzzy sets as a new FuzzySet."""
+    result = FuzzySet()
+    keys = set(self._elements.keys()) | set(other._elements.keys())
+    for k in keys:
+        m1 = self._elements.get(k, 0)
+        m2 = other._elements.get(k, 0)
+        result[k] = min(1,m1+m2)
+    return result
+```
+
+12. Bounded difference:-  
+
+$$A\ominus B = \{ x,\mu_{A \ominus B}(x)\}$$
+
+$$\\mu_{A \ominus B}(x) =max[0,\mu_{A}(x)+\mu_{B}(x)-1]$$
+
+```python
+def bddiff(self, other):
+    """Returns the bounded difference of two fuzzy sets as a new FuzzySet."""
+    result = FuzzySet()
+    keys = set(self._elements.keys()) | set(other._elements.keys())
+    for k in keys:
+        m1 = self._elements.get(k, 0)
+        m2 = other._elements.get(k, 0)
+        result[k] = max(0,m1+m2-1)
+    return result
+```
+
+To see the full code, please refer GitHub link [here](https://github.com/glitterB/fuzzy-soft).
+
+
+# 4. References
+1. D. K. Pratihar, _Soft Computing_, Narosa Publications, New Delhi, 2008
+2. Shridhar Rajendra Mankar, _5 Minute Engineering_, YouTube Channel, 2019
+3. Pozo Ramos, L. (2024, July 1), Python’s built-in functions: A complete exploration, Real Python. https://realpython.com/python-built-in-functions
+
+---

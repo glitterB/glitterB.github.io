@@ -1,9 +1,0 @@
----
-title: "Mental Math Tool"
-description: "Too made for practicing arithmatcs"
-categories: [JavaScript, HTML]
----
-
-To learn more
-
-[Click here](https://github.com/glitterB/mental-math-practice-tool)
