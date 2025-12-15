@@ -1,0 +1,200 @@
+---
+title: Particle Swarm Optimization
+description: Visualizing PSO using p5.js
+categories:
+  - Optimization
+  - p5.js
+---
+## Overview
+
+Particle Swarm Optimization (PSO) is a population-based evolutionary optimization technique inspired by the collective behavior observed in natural swarms such as birds flocking or fish schooling. Similar in spirit to Genetic Algorithms, PSO operates on a *swarm* of candidate solutions, called *particles*, which collaboratively search the design space for an optimal solution.
+
+Each particle represents a potential solution and moves through the search space by updating its velocity and position based on:
+
+* its own historical best position (*personal best*, ($P_{best}$)), and
+* the best position discovered by the entire swarm (*global best*, ($P_g$)).
+
+In this project, PSO is visualized using `p5.js` to provide an intuitive understanding of how particles explore the search space and converge toward an optimum.
+
+---
+
+## Optimization Problem
+
+Let the objective function be
+
+$$
+\min f(x, y) = x^2 + y^2
+$$
+
+This is a simple convex function with a global minimum at ((0, 0)). The goal of the swarm is to iteratively move particles toward this point.
+
+---
+
+## Particle Representation
+
+PSO begins by initializing a swarm of particles with random positions and velocities. Each particle maintains:
+
+* its current position and velocity,
+* its personal best position encountered so far, and
+* the corresponding fitness value.
+
+In the visualization, each particle is rendered as a small circle. The particle object in JavaScript is shown below. Positions and velocities are initialized randomly within the search domain.
+
+```javascript
+class Particle {
+  constructor() {
+    this.pos = createVector(random(-200, 200), random(-150, 150));
+    this.vel = p5.Vector.random2D().mult(2);
+    this.best = this.pos.copy();
+    this.bestVal = this.pos.x ** 2 + this.pos.y ** 2;
+  }
+...
+show() {
+    stroke(255);
+    fill(255, 150);
+    ellipse(this.pos.x, this.pos.y, 6, 6);   
+  }
+```
+
+---
+
+## Swarm Initialization
+
+A swarm consisting of (n) particles is created during the setup phase. At initialization, the fitness of each particle is evaluated, and the global best solution across the swarm is identified.
+
+```javascript
+let n = 30;
+let particles = [];
+let gBest; // global best position
+let gBestVal = Infinity;
+
+function setup() {
+  createCanvas(600, 400);
+  for (let i = 0; i < n; i++) {
+    let p = new Particle();
+    particles.push(p);
+
+    // Evaluate initial fitness
+    let val = p.pos.x ** 2 + p.pos.y ** 2;
+    // Update global best
+    if (val < gBestVal) {
+      gBestVal = val;
+      gBest = p.pos.copy();
+    }
+  }
+}
+```
+
+---
+
+## PSO Update Equations
+
+The motion of each particle is governed by the following update equations:
+
+$$
+v_{id}(t+1) = w v_{id}(t) + c_1 r_1 (p_{id} - x_{id}(t)) + c_2 r_2 (p_{gd} - x_{id}(t))
+$$
+
+$$
+x_{id}(t+1) = x_{id}(t) + v_{id}(t+1)
+$$
+
+where
+
+$$
+\begin{aligned}
+w &= \text{inertia weight} \\
+c_1 &= \text{cognitive coefficient} \\
+c_2 &= \text{social coefficient} \\
+r_1, r_2 &\in [0, 1] \text{ are random numbers} \\
+v_{id}(t) &= \text{velocity of particle } i \text{ at iteration } t \\
+x_{id}(t) &= \text{position of particle } i \text{ at iteration } t \\
+p_{id} &= \text{personal best of particle } i \\
+p_{gd} &= \text{global best of the swarm}
+\end{aligned}
+$$
+
+Here, ($i$) denotes the particle index, ($d$) represents the dimensionality of the problem, and ($t$) is the iteration counter.
+
+---
+
+## Particle Update Logic
+
+Within the `Particle` object, the `update()` method implements the PSO equations. The inertia term controls exploration, while the cognitive and social terms guide particles toward promising regions identified by individual and collective experience.
+
+```javascript
+...
+update() {
+    // PSO parameters
+    let w = 0.5; // inertia
+    let c1 = 1.0; // cognitive
+    let c2 = 1.0; // social
+
+    // velocity update
+    let r1 = random();
+    let r2 = random();
+
+    // Make sure gBest exists before using it
+    if (gBest) {
+      let cognitive = p5.Vector.sub(this.best, this.pos).mult(c1 * r1);
+      let social = p5.Vector.sub(gBest, this.pos).mult(c2 * r2);
+      this.vel.mult(w).add(cognitive).add(social);
+    }
+
+    // position update
+    this.vel.mult(0.01)
+    this.pos.add(this.vel);
+  }
+```
+
+---
+
+## Iterative Optimization and Visualization
+
+During each animation frame, particle positions are updated, fitness values are evaluated, and both personal and global bests are revised. The global best position is highlighted in green to visually distinguish it from the rest of the swarm.
+
+```javascript
+function draw() {
+  background(20);
+  translate(width / 2, height / 2); // origin at center
+
+  // Evaluate and update all particles
+  for (let p of particles) {
+    p.update();
+    p.show();
+
+    let val = p.pos.x ** 2 + p.pos.y ** 2;
+    if (val < p.bestVal) {
+      p.bestVal = val;
+      p.best = p.pos.copy();
+    }
+
+    if (val < gBestVal) {
+      gBestVal = val;
+      gBest = p.pos.copy();
+    }
+  }
+
+  // Draw global best
+  noStroke();
+  fill(0, 255, 0);
+  ellipse(gBest.x, gBest.y, 10, 10);
+}
+```
+
+---
+
+## Results
+
+As the simulation runs, particles gradually converge toward the origin, demonstrating the collective optimization behavior of PSO. The animated result is shown below.
+
+![PSO visualization](src/project2-pso.gif)
+
+The complete `p5.js` sketch can be accessed at the following link:
+[PSO Visualization on p5.js Editor](https://editor.p5js.org/TheLearningStudent/sketches/93u3vh99i)
+
+---
+
+## References
+
+1. D. K. Pratihar, *Soft Computing*, Narosa Publications, New Delhi, 2008

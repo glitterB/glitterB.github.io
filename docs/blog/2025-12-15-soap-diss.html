@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-12-15">
+<meta name="description" content="Why Does Soap Dissolve Faster at the Beginning?">
 
-<title>Projects – Rushikesh | ME</title>
+<title>Soap dissolution – Rushikesh | ME</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -70,35 +70,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -157,7 +128,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../projects/index.html" aria-current="page"> 
+    <a class="nav-link" href="../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -179,22 +150,48 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#modeling-the-soap" id="toc-modeling-the-soap" class="nav-link active" data-scroll-target="#modeling-the-soap">Modeling the Soap</a></li>
+  <li><a href="#geometric-relations" id="toc-geometric-relations" class="nav-link" data-scroll-target="#geometric-relations">Geometric Relations</a></li>
+  <li><a href="#dissolution-rate-equation" id="toc-dissolution-rate-equation" class="nav-link" data-scroll-target="#dissolution-rate-equation">Dissolution Rate Equation</a></li>
+  <li><a href="#solving-the-equation" id="toc-solving-the-equation" class="nav-link" data-scroll-target="#solving-the-equation">Solving the Equation</a></li>
+  <li><a href="#final-expression-for-soap-volume" id="toc-final-expression-for-soap-volume" class="nav-link" data-scroll-target="#final-expression-for-soap-volume">Final Expression for Soap Volume</a></li>
+  <li><a href="#about-the-dissolution-constant" id="toc-about-the-dissolution-constant" class="nav-link" data-scroll-target="#about-the-dissolution-constant">About the Dissolution Constant</a></li>
+  <li><a href="#closing-thoughts" id="toc-closing-thoughts" class="nav-link" data-scroll-target="#closing-thoughts">Closing Thoughts</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
-</div>
+<h1 class="title">Soap dissolution</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">General</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Why Does Soap Dissolve Faster at the Beginning?
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 15, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -204,53 +201,125 @@ window.Quarto = {
 </header>
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="UHl0aG9uJTJDRnV6enklMjBzZXRz" data-listing-file-modified-sort="1765705478939" data-listing-reading-time-sort="7" data-listing-word-count-sort="1298">
-<div class="thumbnail"><a href="../projects/project1-fuzzy-set.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project1-fuzzy-set.html" class="no-external">Fuzzy sets in Python</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project1-fuzzy-set.html" class="no-external">
-<p>A python code for implementing Fuzzy sets.</p>
-</a></div>
+<p>We all use soap in our daily lives. According to Wikipedia, <em>“Soap is a salt of a fatty acid used in a variety of cleansing and lubricating products.”</em> While using soap, I noticed an interesting phenomenon: <strong>a new bar of soap seems to dissolve at much faster rate initially, but as it gets smaller, the rate of dissolution slows down</strong>.</p>
+<p>At first, this felt like a trivial observation—something we experience daily but never question. Curious, I shared this with a friend (his name is Suyog and he is an Aerospace Engineer), stating <em>Soap dissolves exponentially</em>. Instead of brushing it off, he approached it like an Engineer (or physicist–mathematician) would. His exact reply was: <em>“Interesting!😃”</em>. What followed was a simple yet elegant mathematical explanation that captured this everyday phenomenon well.</p>
+<p>I have tried to share our story through this article.</p>
+<hr>
+<section id="modeling-the-soap" class="level2">
+<h2 class="anchored" data-anchor-id="modeling-the-soap">Modeling the Soap</h2>
+<p>To translate the observation into mathematics, we made a few simplifying assumptions:</p>
+<ul>
+<li><p>The soap is assumed to be a <strong>perfect cube</strong>.</p></li>
+<li><p>The soap dissolves uniformly from all exposed surfaces.</p></li>
+<li><p>The <strong>rate of change of volume</strong> is proportional to the <strong>total surface area</strong> of the soap.</p></li>
+</ul>
+<p>Let the side length of the soap cube be <span class="math inline">\(x\)</span> units.</p>
+<hr>
+</section>
+<section id="geometric-relations" class="level2">
+<h2 class="anchored" data-anchor-id="geometric-relations">Geometric Relations</h2>
+<p>The volume of a cube is given by</p>
+<p><span class="math display">\[  
+V = x^3  
+\]</span></p>
+<p>The total surface area of the cube is</p>
+<p><span class="math display">\[  
+A = 6x^2  
+\]</span></p>
+<hr>
+</section>
+<section id="dissolution-rate-equation" class="level2">
+<h2 class="anchored" data-anchor-id="dissolution-rate-equation">Dissolution Rate Equation</h2>
+<p>Assuming that the rate at which the soap volume decreases is directly proportional to its surface area:</p>
+<p><span class="math display">\[  
+\frac{dV}{dt} = -k A  
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><p><span class="math inline">\(k\)</span> is the <strong>dissolution constant</strong>, and</p></li>
+<li><p>the negative sign indicates a decrease in volume over time.</p></li>
+</ul>
+<p>Substituting <span class="math inline">\(A = 6x^2\)</span> and <span class="math inline">\(V = x^3\)</span>, we write</p>
+<p><span class="math display">\[  
+\frac{dV}{dt} = -6k x^2  
+\]</span></p>
+<p>Since</p>
+<p><span class="math display">\[  
+V = x^3 \Rightarrow \frac{dV}{dt} = 3x^2 \frac{dx}{dt}  
+\]</span></p>
+<p>we obtain</p>
+<p><span class="math display">\[  
+3x^2 \frac{dx}{dt} = -6k x^2  
+\]</span></p>
+<p>Canceling <span class="math inline">\(x^2\)</span> from both sides gives</p>
+<p><span class="math display">\[  
+\frac{dx}{dt} = -2k  
+\]</span></p>
+<hr>
+</section>
+<section id="solving-the-equation" class="level2">
+<h2 class="anchored" data-anchor-id="solving-the-equation">Solving the Equation</h2>
+<p>Integrating with respect to time:</p>
+<p><span class="math display">\[  
+\int dx = -2k \int dt  
+\]</span></p>
+<p>which yields</p>
+<p><span class="math display">\[  
+x = -2kt + C  
+\]</span></p>
+<p>At time <span class="math inline">\(t = 0\)</span>, let the initial volume of the soap be <span class="math inline">\(V_0\)</span>. Then the initial side length is</p>
+<p><span class="math display">\[  
+x_0 = V_0^{1/3}  
+\]</span></p>
+<p>Substituting into the equation, we get</p>
+<p><span class="math display">\[  
+x = V_0^{1/3} - 2kt  
+\]</span></p>
+<hr>
+</section>
+<section id="final-expression-for-soap-volume" class="level2">
+<h2 class="anchored" data-anchor-id="final-expression-for-soap-volume">Final Expression for Soap Volume</h2>
+<p>Since <span class="math inline">\(V = x^3\)</span>, the volume of the soap at any time <span class="math inline">\(t\)</span> is</p>
+<p><span class="math display">\[  
+\boxed{V(t) = \left(V_0^{1/3} - 2kt\right)^3}  \tag{1}
+\]</span></p>
+<p>This equation neatly explains the original observation:</p>
+<ul>
+<li><p>When the soap is <strong>large</strong>, its surface area is high, so it dissolves quickly.</p></li>
+<li><p>As the soap becomes <strong>smaller</strong>, the surface area reduces, slowing down the dissolution rate.</p></li>
+<li><p>The existence of a real root for this equation indicates a finite time at which the soap vanishes completely—confirming the physical validity of the model.</p></li>
+</ul>
+<p>Assuming <span class="math inline">\(V_0=1\)</span> and <span class="math inline">\(k=0.05\)</span>, plot of equation <span class="math inline">\((1)\)</span> looks like:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="src/2025-12-15-soap-diss.jpg" class="img-fluid figure-img"></p>
+<figcaption>Soap dissolution</figcaption>
+</figure>
 </div>
-<div class="metadata">
-<a href="../projects/project1-fuzzy-set.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="T3B0aW1pemF0aW9uJTJDcDUuanM=" data-listing-file-modified-sort="1765776966806" data-listing-reading-time-sort="5" data-listing-word-count-sort="887">
-<div class="thumbnail"><a href="../projects/project2-pso-p5js.html" class="no-external">
+<hr>
+</section>
+<section id="about-the-dissolution-constant" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-dissolution-constant">About the Dissolution Constant</h2>
+<p>The parameter (k) is the <strong>dissolution constant</strong> of the soap. It depends on several real-world factors, including:</p>
+<ul>
+<li><p>Soap composition</p></li>
+<li><p>Water temperature</p></li>
+<li><p>Water hardness</p></li>
+<li><p>Degree of agitation</p></li>
+</ul>
+<p>The unit of <span class="math inline">\(k\)</span> is (<span class="math inline">\(\text{m/s}\)</span>).</p>
+<hr>
+</section>
+<section id="closing-thoughts" class="level2">
+<h2 class="anchored" data-anchor-id="closing-thoughts">Closing Thoughts</h2>
+<p>What started as a casual observation during a routine activity turned into a satisfying example of how <strong>simple mathematics can explain everyday phenomena</strong>. It also reinforced an important lesson: even the most mundane experiences can lead to meaningful insights when viewed through a scientific lens.</p>
+<p>Sometimes, all it takes is curiosity—and a friend willing to turn that curiosity into equations.</p>
+<hr>
 
-<p class="card-img-top"><img src="src\project2-pso.gif"  class="thumbnail-image card-img"/></p>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project2-pso-p5js.html" class="no-external">Particle Swarm Optimization</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project2-pso-p5js.html" class="no-external">
-<p>Visualizing PSO using p5.js</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../projects/project2-pso-p5js.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

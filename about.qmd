@@ -2,6 +2,8 @@
 title: "About Me"
 ---
 
+<img src="images/avatar.jpg" style="width:20%; border-radius:50%;">
+
 My name is **Rushikesh Kulkarni**, and I am pursuing a Master of Technology at **Indian Institute of Technology, Kharagpur**.  
 
 After working in [SMS Group, Pune Office](https://www.sms-group.com/) for two years, I decided to pursue masters degree in Manufacturing Science and Engineering. Prior experience as a **Design Engineer** in steel industry laid a stong foundation in engineering design, manufacturing processes & problem solving.  
@@ -12,6 +14,12 @@ I am always open to **collaboration and professional discussions** in the domain
 
 Engineering is awesome!
 
----
----
+## Get in touch
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://in.linkedin.com/in/rushikesh-kulkarni-0a1455212)
+[![Twitter](https://img.shields.io/badge/X-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/rushi_k_7)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white)](https://www.instagram.com/rushi_k_0/)
+
+
+---
+---

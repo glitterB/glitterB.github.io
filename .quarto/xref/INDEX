@@ -31,5 +31,11 @@
   },
   "projects/project1-fuzzy-set.qmd": {
     "project1-fuzzy-set.html": "3e30d965"
+  },
+  "blog/2025-12-15-soap-diss.qmd": {
+    "2025-12-15-soap-diss.html": "ac52fe6f"
+  },
+  "projects/project2-pso-p5js.qmd": {
+    "project2-pso-p5js.html": "3ff67abd"
   }
 }
