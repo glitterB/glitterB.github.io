@@ -116,10 +116,6 @@ def planar_two_links(l1, theta1, l2, theta2):
 planar_two_links(l1=5,theta1=45,l2=5,theta2=30)
 ```
 
-After running the code, we will get below results.
-
-![2-Link Planar Manipulator](src/project3-plot1.png)
-
 References
 
 1. Craig, J. J. (2009). Introduction to robotics: Mechanics and control (3rd ed.). Pearson Education.
