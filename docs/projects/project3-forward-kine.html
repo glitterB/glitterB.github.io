@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Simulating Forward Kinematics of 2-Link Planar Manipulator using Python">
 
-<title>Projects – Rushikesh | ME</title>
+<title>Forward Kinematics of a 2-Link Planar Manipulator – Rushikesh | ME</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +66,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -70,35 +104,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -157,7 +162,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../projects/index.html" aria-current="page"> 
+    <a class="nav-link" href="../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -179,17 +184,34 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#denavithartenberg-transformation-matrix" id="toc-denavithartenberg-transformation-matrix" class="nav-link active" data-scroll-target="#denavithartenberg-transformation-matrix">Denavit–Hartenberg Transformation Matrix</a></li>
+  <li><a href="#overall-forward-kinematics" id="toc-overall-forward-kinematics" class="nav-link" data-scroll-target="#overall-forward-kinematics">Overall Forward Kinematics</a></li>
+  <li><a href="#denavithartenberg-parameters" id="toc-denavithartenberg-parameters" class="nav-link" data-scroll-target="#denavithartenberg-parameters">Denavit–Hartenberg Parameters</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
-</div>
+<h1 class="title">Forward Kinematics of a 2-Link Planar Manipulator</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Robotics</div>
+    <div class="quarto-category">Python</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Simulating Forward Kinematics of 2-Link Planar Manipulator using Python
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -204,72 +226,156 @@ window.Quarto = {
 </header>
 
 
+<p>This article demonstrates the forward kinematics of a <strong>two-link planar robotic manipulator</strong>. Forward kinematics involves determining the <strong>position and orientation of the end-effector</strong> given the joint variables and link parameters.</p>
+<p>To describe the kinematic structure of the manipulator, we use the <strong>Denavit–Hartenberg (DH) convention</strong>, which represents the spatial relationship between successive coordinate frames using four parameters: joint angle <span class="math inline">\(\theta_i\)</span>, link offset <span class="math inline">\(d_i\)</span>, link length <span class="math inline">\(a_i\)</span>, and link twist <span class="math inline">\(\alpha_i\)</span>.</p>
+<hr>
+<section id="denavithartenberg-transformation-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="denavithartenberg-transformation-matrix">Denavit–Hartenberg Transformation Matrix</h2>
+<p>Using the standard DH convention, the homogeneous transformation matrix that relates frame <span class="math inline">\(i\)</span> to frame <span class="math inline">\(i-1\)</span> is given by:</p>
+<p><span class="math display">\[
+{}^{i-1}_{i}T =
+\begin{bmatrix}
+\cos\theta_i &amp; -\sin\theta_i\cos\alpha_i &amp; \sin\theta_i\sin\alpha_i &amp; a_i\cos\theta_i \\
+\sin\theta_i &amp; \cos\theta_i\cos\alpha_i &amp; -\cos\theta_i\sin\alpha_i &amp; a_i\sin\theta_i \\
+0 &amp; \sin\alpha_i &amp; \cos\alpha_i &amp; d_i \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span></p>
+<p>This matrix incorporates both the <strong>rotation</strong> and <strong>translation</strong> between two consecutive links of the manipulator (also knows as screw motion).</p>
+<hr>
+</section>
+<section id="overall-forward-kinematics" class="level2">
+<h2 class="anchored" data-anchor-id="overall-forward-kinematics">Overall Forward Kinematics</h2>
+<p>For a manipulator with <span class="math inline">\(n\)</span> links, the transformation matrix that relates the end-effector frame <span class="math inline">\(n\)</span> to the base frame <span class="math inline">\(0\)</span> is obtained by multiplying the individual link transformation matrices:</p>
+<p><span class="math display">\[
+{}^{0}_{n}T =
+{}^{0}_{1}T \;
+{}^{1}_{2}T \;
+\cdots \;
+{}^{n-1}_{n}T
+\]</span></p>
+<p>The resulting homogeneous transformation matrix provides the <strong>position and orientation</strong> of the end-effector with respect to the base frame.</p>
+</section>
+<section id="denavithartenberg-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="denavithartenberg-parameters">Denavit–Hartenberg Parameters</h2>
+<p>For the 2-link planar robotic manipulator, the Denavit–Hartenberg parameters are defined as follows:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 25%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Link <span class="math display">\[i\]</span></th>
+<th>Joint Angle <span class="math display">\[\theta_i\]</span></th>
+<th>Link Offset <span class="math display">\[d_i\]</span></th>
+<th>Link Length <span class="math display">\[a_i\]</span></th>
+<th>Link Twist <span class="math display">\[\alpha_i\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><span class="math display">\[\theta_1\]</span></td>
+<td><span class="math display">\[0\]</span></td>
+<td><span class="math display">\[l_1\]</span></td>
+<td><span class="math display">\[0\]</span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><span class="math display">\[\theta_2\]</span></td>
+<td><span class="math display">\[0\]</span></td>
+<td><span class="math display">\[l_2\]</span></td>
+<td><span class="math display">\[0\]</span></td>
+</tr>
+</tbody>
+</table>
+<p>Below is the complete code which simulate Forward Kinematics.</p>
+<div id="861a15fa" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact <span class="co">#for interactive widget</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> trans_mat_gen(param):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    a, alpha, theta, d <span class="op">=</span> param[<span class="dv">0</span>], param[<span class="dv">1</span>], param[<span class="dv">2</span>], param[<span class="dv">3</span>]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> [</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        [np.cos(theta), <span class="op">-</span>np.cos(alpha)<span class="op">*</span>np.sin(theta),  np.sin(alpha)<span class="op">*</span>np.sin(theta), a<span class="op">*</span>np.cos(theta)],</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        [np.sin(theta),  np.cos(alpha)<span class="op">*</span>np.cos(theta), <span class="op">-</span>np.sin(alpha)<span class="op">*</span>np.cos(theta), a<span class="op">*</span>np.sin(theta)],</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        [<span class="dv">0</span>,              np.sin(alpha),                np.cos(alpha),               d],</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        [<span class="dv">0</span>,              <span class="dv">0</span>,                            <span class="dv">0</span>,                           <span class="dv">1</span>]</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(t)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to simulate and plot the 2-link planar arm</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> planar_two_links(l1, theta1, l2, theta2):</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert degrees to radians</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    theta1_rad <span class="op">=</span> np.radians(theta1)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    theta2_rad <span class="op">=</span> np.radians(theta2)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define DH parameters: [a, alpha, theta, d]</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    dh_table <span class="op">=</span> {</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="dv">1</span>: [l1, <span class="dv">0</span>, theta1_rad, <span class="dv">0</span>],</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="dv">2</span>: [l2, <span class="dv">0</span>, theta2_rad, <span class="dv">0</span>]</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get transformation matrices</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    trans_10 <span class="op">=</span> trans_mat_gen(dh_table[<span class="dv">1</span>])</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    trans_21 <span class="op">=</span> trans_mat_gen(dh_table[<span class="dv">2</span>])</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    trans_20 <span class="op">=</span> trans_10 <span class="op">@</span> trans_21</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Points in base frame</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    origin <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">0</span>])</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    joint1 <span class="op">=</span> trans_10 <span class="op">@</span> np.array([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    end_effector <span class="op">=</span> trans_20 <span class="op">@</span> np.array([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    x_vals <span class="op">=</span> [origin[<span class="dv">0</span>], joint1[<span class="dv">0</span>], end_effector[<span class="dv">0</span>]]</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    y_vals <span class="op">=</span> [origin[<span class="dv">1</span>], joint1[<span class="dv">1</span>], end_effector[<span class="dv">1</span>]]</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plotting</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    plt.plot(x_vals, y_vals, <span class="st">'-o'</span>, linewidth<span class="op">=</span><span class="dv">4</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    plt.xlim(<span class="op">-</span> (l1 <span class="op">+</span> l2 <span class="op">+</span> <span class="dv">1</span>), l1 <span class="op">+</span> l2 <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    plt.ylim(<span class="op">-</span> (l1 <span class="op">+</span> l2 <span class="op">+</span> <span class="dv">1</span>), l1 <span class="op">+</span> l2 <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">"2-Link Planar Manipulator"</span>)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"X"</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">"Y"</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="co">## Thick red horizontal line at y=0 that spans the xrange.</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    plt.axhline(color<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    plt.axvline(color<span class="op">=</span><span class="st">'b'</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    plt.gca().set_aspect(<span class="st">'equal'</span>, adjustable<span class="op">=</span><span class="st">'box'</span>)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="co"># For interactive widget, uncomment code below</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="co">#interact(planar_two_links, l1=(1, 10), theta1=(0, 180), l2=(1, 10), theta2=(0, 360))</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>planar_two_links(l1<span class="op">=</span><span class="dv">5</span>,theta1<span class="op">=</span><span class="dv">45</span>,l2<span class="op">=</span><span class="dv">5</span>,theta2<span class="op">=</span><span class="dv">30</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="project3-forward-kine_files/figure-html/cell-2-output-1.png" width="531" height="523" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>After running the code, we will get below results.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="src/project3-plot1.png" class="img-fluid figure-img"></p>
+<figcaption>2-Link Planar Manipulator</figcaption>
+</figure>
+</div>
+<p>References</p>
+<ol type="1">
+<li>Craig, J. J. (2009). Introduction to robotics: Mechanics and control (3rd ed.). Pearson Education.</li>
+</ol>
+<hr>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Um9ib3RpY3MlMkNQeXRob24=" data-listing-file-modified-sort="1765957336113" data-listing-reading-time-sort="5" data-listing-word-count-sort="855">
-<div class="thumbnail"><a href="../projects/project3-forward-kine.html" class="no-external">
-
-<p class="card-img-top"><img src="project3-forward-kine_files\figure-html\cell-2-output-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project3-forward-kine.html" class="no-external">Forward Kinematics of a 2-Link Planar Manipulator</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project3-forward-kine.html" class="no-external">
-<p>Simulating Forward Kinematics of 2-Link Planar Manipulator using Python</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../projects/project3-forward-kine.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="UHl0aG9uJTJDRnV6enklMjBzZXRz" data-listing-file-modified-sort="1765705478939" data-listing-reading-time-sort="7" data-listing-word-count-sort="1298">
-<div class="thumbnail"><a href="../projects/project1-fuzzy-set.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project1-fuzzy-set.html" class="no-external">Fuzzy sets in Python</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project1-fuzzy-set.html" class="no-external">
-<p>A python code for implementing Fuzzy sets.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../projects/project1-fuzzy-set.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="T3B0aW1pemF0aW9uJTJDcDUuanM=" data-listing-file-modified-sort="1765776966806" data-listing-reading-time-sort="5" data-listing-word-count-sort="887">
-<div class="thumbnail"><a href="../projects/project2-pso-p5js.html" class="no-external">
-
-<p class="card-img-top"><img src="src\project2-pso.gif"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project2-pso-p5js.html" class="no-external">Particle Swarm Optimization</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project2-pso-p5js.html" class="no-external">
-<p>Visualizing PSO using p5.js</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../projects/project2-pso-p5js.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
