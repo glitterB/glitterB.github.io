@@ -2,4 +2,4 @@ Personal Website
 
 ---
 
-Made with [Quarto](https://quarto.org/) | Click [here](glitterb.github.io) to visit.
+Made with [Quarto](https://quarto.org/) | Click [here](https://glitterb.github.io/) to visit.
