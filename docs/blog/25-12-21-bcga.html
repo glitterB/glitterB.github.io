@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-12-21">
+<meta name="description" content="Nature inspired techniques to solve problems">
 
-<title>Projects – Rushikesh | ME</title>
+<title>Binary Coded Genetic Algorithm – Rushikesh | ME</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +67,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -70,65 +105,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -157,7 +134,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../projects/index.html" aria-current="page"> 
+    <a class="nav-link" href="../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -179,22 +156,43 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#d.-k.-pratihar-soft-computing-narosa-publications-new-delhi-2008" id="toc-d.-k.-pratihar-soft-computing-narosa-publications-new-delhi-2008" class="nav-link active" data-scroll-target="#d.-k.-pratihar-soft-computing-narosa-publications-new-delhi-2008">1. D. K. Pratihar, <em>Soft Computing</em>, Narosa Publications, New Delhi, 2008</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
-</div>
+<h1 class="title">Binary Coded Genetic Algorithm</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Python</div>
+    <div class="quarto-category">Soft Computing</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Nature inspired techniques to solve problems
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 21, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -204,72 +202,88 @@ window.Quarto = {
 </header>
 
 
+<p>Traditional optimization techniques such as exhaustive search, random walk, and gradient-based methods suffer from practical limitations. They often require mathematical formulation of the objective function, make assumptions about continuity or differentiability, and are prone to convergence at local optima—especially for non-convex problems.</p>
+<p>To address these limitations, non-traditional optimization techniques were introduced. Genetic Algorithms (GAs) are population-based, stochastic optimization methods inspired by natural selection. They operate on candidate solutions directly, without requiring gradient information, making them suitable for complex and multimodal search spaces.</p>
+<p>In this article, we focus on the working of a <strong>Binary Coded Genetic Algorithm (BCGA)</strong> and its Python implementation. The overall workflow of the algorithm is illustrated in the flowchart below.</p>
+<pre class="mermaid"><code>%%{init: {"flowchart": {"curve": "linear"}}}%%
+flowchart TD
+    A([Start])
+    B[Initialize a population of solutions&lt;br/&gt;Gen = 0]
+    C{Gen &gt;= Max_gen ?}
+    D([End])
+    E[Assign fitness to all solutions in the population]
+    F[Reproduction]
+    G[Crossover]
+    H[Mutation]
+    I[Gen = Gen + 1]
+
+    A --&gt; B
+    B --&gt; C
+    C -- Yes --&gt; D
+    C -- No --&gt; E
+    E --&gt; F
+    F --&gt; G
+    G --&gt; H
+    H --&gt; I
+    I --&gt; C</code></pre>
+<p>Each block in the flowchart corresponds directly to a modular component in the Python implementation discussed in the following sections.</p>
+<ol type="1">
+<li>Generating initial population and evaluating fitness</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Generation of strings</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> binary_string(length: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; <span class="cf">return</span> <span class="st">''</span>.join(<span class="bu">str</span>(randint(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(length))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Fitness evaluation</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> decode_binary(xmin: <span class="bu">float</span>, xmax: <span class="bu">float</span>, l: <span class="bu">int</span>, bin_str: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; decoded_value <span class="op">=</span> <span class="bu">int</span>(bin_str, <span class="dv">2</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; precision <span class="op">=</span> (xmax <span class="op">-</span> xmin) <span class="op">/</span> ((<span class="dv">2</span> <span class="op">**</span> l) <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; <span class="cf">return</span> xmin <span class="op">+</span> decoded_value <span class="op">*</span> precision</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="1">
+<li>Selection, Crossover &amp; Mutation</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> single_point_crossover(mating_pool):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> <span class="bu">len</span>(mating_pool[<span class="dv">0</span>])</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    children <span class="op">=</span> []</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(mating_pool)<span class="op">//</span><span class="dv">2</span>):</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        p1 <span class="op">=</span> mating_pool[i]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        p2 <span class="op">=</span> mating_pool[<span class="op">-</span>(i<span class="op">+</span><span class="dv">1</span>)]</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        cp <span class="op">=</span> randint(<span class="dv">1</span>, l<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        children.append(p1[:cp] <span class="op">+</span> p2[cp:])</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        children.append(p2[:cp] <span class="op">+</span> p1[cp:])</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> children</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>Genetic Algorithm loop (runs for specified Generations)</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> gen <span class="kw">in</span> <span class="bu">range</span>(generations):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    fx_values <span class="op">=</span> []</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> sol <span class="kw">in</span> mating_pool:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        x_val <span class="op">=</span> decode_binary(xmin, xmax, l, sol)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        fx <span class="op">=</span> f(x_val)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        fx_values.append(fx)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    mating_pool <span class="op">=</span> reproduction(mating_pool, fx_values)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    mating_pool <span class="op">=</span> single_point_crossover(mating_pool)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    mating_pool <span class="op">=</span> mutation(mating_pool, mutation_rate)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>The complete Python implementation, is available in the GitHub repository linked <a href="https://github.com/glitterB/fuzzy-soft/blob/main/binary-coded-genetic-algorithm.py">here</a>.</p>
+</blockquote>
+<p>This article demonstrated the working of a <strong>Binary Coded Genetic Algorithm (BCGA)</strong> through a Python implementation aligned directly with the algorithmic flowchart. By separating encoding, genetic operators, and the main evolutionary loop, the implementation remains transparent.</p>
+<p>Binary encoding provides a simple and robust representation, but it also introduces some challenges. These limitations can be addressed by incorporating adaptive mutation rates, elitist selection, or transitioning to real-coded genetic algorithms for continuous optimization problems.</p>
+<p>Despite these constraints, BCGA remains a powerful optimization tool for problems where gradient information is unavailable or the search space is highly non-linear. The presented implementation serves as a clear baseline that can be readily extended for more complex objective functions and constraints. ## References</p>
+<section id="d.-k.-pratihar-soft-computing-narosa-publications-new-delhi-2008" class="level2">
+<h2 class="anchored" data-anchor-id="d.-k.-pratihar-soft-computing-narosa-publications-new-delhi-2008">1. D. K. Pratihar, <em>Soft Computing</em>, Narosa Publications, New Delhi, 2008</h2>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Um9ib3RpY3MlMkNQeXRob24=" data-listing-file-modified-sort="1765957541524" data-listing-reading-time-sort="5" data-listing-word-count-sort="845">
-<div class="thumbnail"><a href="../projects/project3-forward-kine.html" class="no-external">
-
-<p class="card-img-top"><img src="project3-forward-kine_files\figure-html\cell-2-output-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project3-forward-kine.html" class="no-external">Forward Kinematics of a 2-Link Planar Manipulator</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project3-forward-kine.html" class="no-external">
-<p>Simulating Forward Kinematics of 2-Link Planar Manipulator using Python</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../projects/project3-forward-kine.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="UHl0aG9uJTJDU29mdCUyMENvbXB1dGluZw==" data-listing-file-modified-sort="1766322038673" data-listing-reading-time-sort="7" data-listing-word-count-sort="1298">
-<div class="thumbnail"><a href="../projects/project1-fuzzy-set.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project1-fuzzy-set.html" class="no-external">Fuzzy sets in Python</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project1-fuzzy-set.html" class="no-external">
-<p>A python code for implementing Fuzzy sets.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../projects/project1-fuzzy-set.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="T3B0aW1pemF0aW9uJTJDcDUuanM=" data-listing-file-modified-sort="1765776966806" data-listing-reading-time-sort="5" data-listing-word-count-sort="887">
-<div class="thumbnail"><a href="../projects/project2-pso-p5js.html" class="no-external">
-
-<p class="card-img-top"><img src="src\project2-pso.gif"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project2-pso-p5js.html" class="no-external">Particle Swarm Optimization</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project2-pso-p5js.html" class="no-external">
-<p>Visualizing PSO using p5.js</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../projects/project2-pso-p5js.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

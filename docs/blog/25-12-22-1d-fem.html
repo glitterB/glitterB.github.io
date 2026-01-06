@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-12-22">
+<meta name="description" content="A Python code to solve 1D FEM problems">
 
-<title>Projects – Rushikesh | ME</title>
+<title>1D Finite Element Method – Rushikesh | ME</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -70,35 +70,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -157,7 +128,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../projects/index.html" aria-current="page"> 
+    <a class="nav-link" href="../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -187,14 +158,29 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
-</div>
+<h1 class="title">1D Finite Element Method</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">FEA/ FEM</div>
+    <div class="quarto-category">Python</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    A Python code to solve 1D FEM problems
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 22, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -204,72 +190,14 @@ window.Quarto = {
 </header>
 
 
+<p>The differential equation for 1D problems is as follows</p>
+<p><span class="math display">\[
+-\frac{d}{dx}\left [a(x)\frac{du}{dx}\right]=f(x)~ \in
+\]</span></p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Um9ib3RpY3MlMkNQeXRob24=" data-listing-file-modified-sort="1765957541524" data-listing-reading-time-sort="5" data-listing-word-count-sort="845">
-<div class="thumbnail"><a href="../projects/project3-forward-kine.html" class="no-external">
-
-<p class="card-img-top"><img src="project3-forward-kine_files\figure-html\cell-2-output-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project3-forward-kine.html" class="no-external">Forward Kinematics of a 2-Link Planar Manipulator</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project3-forward-kine.html" class="no-external">
-<p>Simulating Forward Kinematics of 2-Link Planar Manipulator using Python</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../projects/project3-forward-kine.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="UHl0aG9uJTJDU29mdCUyMENvbXB1dGluZw==" data-listing-file-modified-sort="1766322038673" data-listing-reading-time-sort="7" data-listing-word-count-sort="1298">
-<div class="thumbnail"><a href="../projects/project1-fuzzy-set.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project1-fuzzy-set.html" class="no-external">Fuzzy sets in Python</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project1-fuzzy-set.html" class="no-external">
-<p>A python code for implementing Fuzzy sets.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../projects/project1-fuzzy-set.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="T3B0aW1pemF0aW9uJTJDcDUuanM=" data-listing-file-modified-sort="1765776966806" data-listing-reading-time-sort="5" data-listing-word-count-sort="887">
-<div class="thumbnail"><a href="../projects/project2-pso-p5js.html" class="no-external">
-
-<p class="card-img-top"><img src="src\project2-pso.gif"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project2-pso-p5js.html" class="no-external">Particle Swarm Optimization</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project2-pso-p5js.html" class="no-external">
-<p>Visualizing PSO using p5.js</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../projects/project2-pso-p5js.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

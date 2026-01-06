@@ -1,0 +1,96 @@
+---
+title: "Binary Coded Genetic Algorithm"
+description: "Nature inspired techniques to solve problems"
+date: 2025-12-21
+categories: [Python, Soft Computing]
+---
+Traditional optimization techniques such as exhaustive search, random walk, and gradient-based methods suffer from practical limitations. They often require mathematical formulation of the objective function, make assumptions about continuity or differentiability, and are prone to convergence at local optima—especially for non-convex problems.
+
+To address these limitations, non-traditional optimization techniques were introduced. Genetic Algorithms (GAs) are population-based, stochastic optimization methods inspired by natural selection. They operate on candidate solutions directly, without requiring gradient information, making them suitable for complex and multimodal search spaces.
+
+In this article, we focus on the working of a **Binary Coded Genetic Algorithm (BCGA)** and its Python implementation. The overall workflow of the algorithm is illustrated in the flowchart below.
+
+```mermaid
+%%{init: {"flowchart": {"curve": "linear"}}}%%
+flowchart TD
+    A([Start])
+    B[Initialize a population of solutions<br/>Gen = 0]
+    C{Gen >= Max_gen ?}
+    D([End])
+    E[Assign fitness to all solutions in the population]
+    F[Reproduction]
+    G[Crossover]
+    H[Mutation]
+    I[Gen = Gen + 1]
+
+    A --> B
+    B --> C
+    C -- Yes --> D
+    C -- No --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    I --> C
+```
+Each block in the flowchart corresponds directly to a modular component in the Python implementation discussed in the following sections.
+
+1) Generating initial population and evaluating fitness
+```python
+#Generation of strings
+def binary_string(length: int) -> str:
+	...
+    return ''.join(str(randint(0, 1)) for _ in range(length))
+
+#Fitness evaluation
+
+def decode_binary(xmin: float, xmax: float, l: int, bin_str: str) -> float:
+    decoded_value = int(bin_str, 2)
+    precision = (xmax - xmin) / ((2 ** l) - 1)
+    return xmin + decoded_value * precision
+```
+
+2) Selection, Crossover & Mutation
+```python
+def single_point_crossover(mating_pool):
+    l = len(mating_pool[0])
+    children = []
+
+    for i in range(len(mating_pool)//2):
+        p1 = mating_pool[i]
+        p2 = mating_pool[-(i+1)]
+        cp = randint(1, l-1)
+
+        children.append(p1[:cp] + p2[cp:])
+        children.append(p2[:cp] + p1[cp:])
+
+    return children
+
+```
+
+3) Genetic Algorithm loop (runs for specified Generations)
+```python
+for gen in range(generations):
+    fx_values = []
+
+    for sol in mating_pool:
+        x_val = decode_binary(xmin, xmax, l, sol)
+        fx = f(x_val)
+        fx_values.append(fx)
+
+    mating_pool = reproduction(mating_pool, fx_values)
+    mating_pool = single_point_crossover(mating_pool)
+    mating_pool = mutation(mating_pool, mutation_rate)
+```
+
+>The complete Python implementation, is available in the GitHub repository linked [here](https://github.com/glitterB/fuzzy-soft/blob/main/binary-coded-genetic-algorithm.py).
+
+This article demonstrated the working of a **Binary Coded Genetic Algorithm (BCGA)** through a Python implementation aligned directly with the algorithmic flowchart. By separating encoding, genetic operators, and the main evolutionary loop, the implementation remains transparent.
+
+Binary encoding provides a simple and robust representation, but it also introduces some challenges. These limitations can be addressed by incorporating adaptive mutation rates, elitist selection, or transitioning to real-coded genetic algorithms for continuous optimization problems.
+
+Despite these constraints, BCGA remains a powerful optimization tool for problems where gradient information is unavailable or the search space is highly non-linear. The presented implementation serves as a clear baseline that can be readily extended for more complex objective functions and constraints.
+## References
+
+1. D. K. Pratihar, *Soft Computing*, Narosa Publications, New Delhi, 2008
+---

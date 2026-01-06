@@ -1,0 +1,77 @@
+---
+title: "Benford Law"
+description: "Fascinating observation of leading digits"
+date: 2025-01-06
+categories: [General]
+---
+
+# Introduction
+
+Let me ask you a question, _`what will be probability that a number picked randomly from all the numbers in today's newspaper will start with 1?`_ You are thinking, "Okay, there are 1 to 9, total 9 possibilities, so getting a leading digit 1 has probability (1/9), easy". But you will be surprised to know that, it is nearly *30%*. This can be explained with the help of **Benford's Law**. It is an obsevation about leading digit of numbers in real world dataset.
+
+# Statement
+
+It states that,
+
+> *A set of numbers is said to be satisfy Benford's law if leading digit occurs with probability*
+
+$$
+P\left(d\right) ~=~log_{10}(d+1) - log_{10}(d)
+$$
+
+Simplifying the log term gives:
+
+$$
+P\left(d\right) ~=~ log_{10}(1+\frac{1}{d})
+$$
+
+Thus, leading digits in such dataset have the following distribution
+
+
+|Digit    |P(d)|
+|:--------|:---|
+|1        |30%|
+|2        |17.6%|
+|3        |12.5%|
+|4        |9.7%|
+|5        |7.9%|
+|6        |6.7%|
+|7        |5.8%|
+|8        |5.9%|
+|9        |4.6%|
+
+
+The name is given after **Frank Benford**, a general Electirc Physicist who in 1938 collected & analyzed more than *20,000* numbers from many sources and showed that these follow the law. Before him, Astronomer **Simon Newcomb** also observed this pattern in 1881. Being an astronomer, he had to do lots of mathematical calculations. At that time, log tables were used for computation. He noticed that pages in his logarithm tables were much more worn out which were corresponding to leading digit 1 or 2.
+
+# Explanation
+
+We know that, $10^{5}=100000$ and $log_{10}(100000)=5$
+
+In general, the more orders of magnitude that the data evenly covers, the more accurately **Benford's Law**applies. Thus real world distributions that span several orders of magnitude quite uniformly, are likely to satisfy **Benford's Law**(eg. Population of city,town, area etc.)
+
+There is mathematical explanation to this called *Scale Invariance*. That is, it is independent of units you can measure data of area (in $km^{2}/m^{2}/ft^{2}$). It doesn't matter, they all satisfy **Benford's Law**. The intuitive way of understanding this is by considering logarithms of numbers (base 10) in any dataset. If their fractional part is evenly distributed in [0,1]
+
+Now a number "X" starts with digit "d" if and only if;
+
+$$log_{10}(d)\leq \left\{log_{10}(x)\right\} \leq log_{10}(d+1) $$
+
+$$i.e.~\left\{log_{10}(x)\right\}$$ 
+
+lies in an interval of length equal to
+
+$$
+log_{10}(d+1) - log_{10}(d)=log_{10}(1+\frac{1}{d})
+$$
+
+For a simple intuitive sense of this idea, consider following situation. Start with 1, next instance of leading number is 10, so there is a 9 digit spread. With 2, next is 20 so 18 digit spread and so on. Start with 9, next is 90, spread is 81 digits. It is same for larger numbers. Start with 199, next instance of leading number is 1000. spread is 801 digits. As leading digit increases from 1 to 9, the spread also increases, thus it is more likely to have leading digit 1 as spread is less, next comes 2 and so on. This gives qualitative sense of **Benford's Law**.
+
+# Application
+
+- Any dataset derived from many different sources mixed as it will give more span or range of order of magniture
+- Area of different countried, population of animal species etc.
+
+**Benford's Law** is one of the most important law in Data Science .It is used by data scientist to identify fake or fabricated data. This is because it is very difficult to manually construct data which satisty **Benford's Law** in real world. Mroe natural the better. Fraudulent data can be identified by simply calculating frequencies of leading digit. **Benford's Law** can be applied to tax form entried, accounting figures etc.
+
+Knowing where **Benford's Law** is applicable & where it is not is the most cruical factor in this aspect.
+
+---

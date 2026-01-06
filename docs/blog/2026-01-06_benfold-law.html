@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-01-06">
+<meta name="description" content="Fascinating observation of leading digits">
 
-<title>Projects – Rushikesh | ME</title>
+<title>Benford Law – Rushikesh | ME</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -70,35 +70,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -157,7 +128,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../projects/index.html" aria-current="page"> 
+    <a class="nav-link" href="../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -179,22 +150,45 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#statement" id="toc-statement" class="nav-link" data-scroll-target="#statement">Statement</a></li>
+  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">Application</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
-</div>
+<h1 class="title">Benford Law</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">General</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Fascinating observation of leading digits
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 6, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -204,72 +198,100 @@ window.Quarto = {
 </header>
 
 
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Let me ask you a question, <em><code>what will be probability that a number picked randomly from all the numbers in today's newspaper will start with 1?</code></em> You are thinking, “Okay, there are 1 to 9, total 9 possibilities, so getting a leading digit 1 has probability (1/9), easy”. But you will be surprised to know that, it is nearly <em>30%</em>. This can be explained with the help of <strong>Benford’s Law</strong>. It is an obsevation about leading digit of numbers in real world dataset.</p>
+</section>
+<section id="statement" class="level1">
+<h1>Statement</h1>
+<p>It states that,</p>
+<blockquote class="blockquote">
+<p><em>A set of numbers is said to be satisfy Benford’s law if leading digit occurs with probability</em></p>
+</blockquote>
+<p><span class="math display">\[
+P\left(d\right) ~=~log_{10}(d+1) - log_{10}(d)
+\]</span></p>
+<p>Simplifying the log term gives:</p>
+<p><span class="math display">\[
+P\left(d\right) ~=~ log_{10}(1+\frac{1}{d})
+\]</span></p>
+<p>Thus, leading digits in such dataset have the following distribution</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Digit</th>
+<th style="text-align: left;">P(d)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">30%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">17.6%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">12.5%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">9.7%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">7.9%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">6.7%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">5.8%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">5.9%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">4.6%</td>
+</tr>
+</tbody>
+</table>
+<p>The name is given after <strong>Frank Benford</strong>, a general Electirc Physicist who in 1938 collected &amp; analyzed more than <em>20,000</em> numbers from many sources and showed that these follow the law. Before him, Astronomer <strong>Simon Newcomb</strong> also observed this pattern in 1881. Being an astronomer, he had to do lots of mathematical calculations. At that time, log tables were used for computation. He noticed that pages in his logarithm tables were much more worn out which were corresponding to leading digit 1 or 2.</p>
+</section>
+<section id="explanation" class="level1">
+<h1>Explanation</h1>
+<p>We know that, <span class="math inline">\(10^{5}=100000\)</span> and <span class="math inline">\(log_{10}(100000)=5\)</span></p>
+<p>In general, the more orders of magnitude that the data evenly covers, the more accurately <strong>Benford’s Law</strong>applies. Thus real world distributions that span several orders of magnitude quite uniformly, are likely to satisfy <strong>Benford’s Law</strong>(eg. Population of city,town, area etc.)</p>
+<p>There is mathematical explanation to this called <em>Scale Invariance</em>. That is, it is independent of units you can measure data of area (in <span class="math inline">\(km^{2}/m^{2}/ft^{2}\)</span>). It doesn’t matter, they all satisfy <strong>Benford’s Law</strong>. The intuitive way of understanding this is by considering logarithms of numbers (base 10) in any dataset. If their fractional part is evenly distributed in [0,1]</p>
+<p>Now a number “X” starts with digit “d” if and only if;</p>
+<p><span class="math display">\[log_{10}(d)\leq \left\{log_{10}(x)\right\} \leq log_{10}(d+1) \]</span></p>
+<p><span class="math display">\[i.e.~\left\{log_{10}(x)\right\}\]</span></p>
+<p>lies in an interval of length equal to</p>
+<p><span class="math display">\[
+log_{10}(d+1) - log_{10}(d)=log_{10}(1+\frac{1}{d})
+\]</span></p>
+<p>For a simple intuitive sense of this idea, consider following situation. Start with 1, next instance of leading number is 10, so there is a 9 digit spread. With 2, next is 20 so 18 digit spread and so on. Start with 9, next is 90, spread is 81 digits. It is same for larger numbers. Start with 199, next instance of leading number is 1000. spread is 801 digits. As leading digit increases from 1 to 9, the spread also increases, thus it is more likely to have leading digit 1 as spread is less, next comes 2 and so on. This gives qualitative sense of <strong>Benford’s Law</strong>.</p>
+</section>
+<section id="application" class="level1">
+<h1>Application</h1>
+<ul>
+<li>Any dataset derived from many different sources mixed as it will give more span or range of order of magniture</li>
+<li>Area of different countried, population of animal species etc.</li>
+</ul>
+<p><strong>Benford’s Law</strong> is one of the most important law in Data Science .It is used by data scientist to identify fake or fabricated data. This is because it is very difficult to manually construct data which satisty <strong>Benford’s Law</strong> in real world. Mroe natural the better. Fraudulent data can be identified by simply calculating frequencies of leading digit. <strong>Benford’s Law</strong> can be applied to tax form entried, accounting figures etc.</p>
+<p>Knowing where <strong>Benford’s Law</strong> is applicable &amp; where it is not is the most cruical factor in this aspect.</p>
+<hr>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Um9ib3RpY3MlMkNQeXRob24=" data-listing-file-modified-sort="1765957541524" data-listing-reading-time-sort="5" data-listing-word-count-sort="845">
-<div class="thumbnail"><a href="../projects/project3-forward-kine.html" class="no-external">
-
-<p class="card-img-top"><img src="project3-forward-kine_files\figure-html\cell-2-output-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project3-forward-kine.html" class="no-external">Forward Kinematics of a 2-Link Planar Manipulator</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project3-forward-kine.html" class="no-external">
-<p>Simulating Forward Kinematics of 2-Link Planar Manipulator using Python</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../projects/project3-forward-kine.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="UHl0aG9uJTJDU29mdCUyMENvbXB1dGluZw==" data-listing-file-modified-sort="1766322038673" data-listing-reading-time-sort="7" data-listing-word-count-sort="1298">
-<div class="thumbnail"><a href="../projects/project1-fuzzy-set.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project1-fuzzy-set.html" class="no-external">Fuzzy sets in Python</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project1-fuzzy-set.html" class="no-external">
-<p>A python code for implementing Fuzzy sets.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../projects/project1-fuzzy-set.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="T3B0aW1pemF0aW9uJTJDcDUuanM=" data-listing-file-modified-sort="1765776966806" data-listing-reading-time-sort="5" data-listing-word-count-sort="887">
-<div class="thumbnail"><a href="../projects/project2-pso-p5js.html" class="no-external">
-
-<p class="card-img-top"><img src="src\project2-pso.gif"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../projects/project2-pso-p5js.html" class="no-external">Particle Swarm Optimization</a>
-</h3>
-<div class="delink listing-description"><a href="../projects/project2-pso-p5js.html" class="no-external">
-<p>Visualizing PSO using p5.js</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../projects/project2-pso-p5js.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

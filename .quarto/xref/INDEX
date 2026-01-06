@@ -40,5 +40,14 @@
   },
   "projects/project3-forward-kine.qmd": {
     "project3-forward-kine.html": "bd38fbc3"
+  },
+  "blog/2026-01-06_benfold-law.qmd": {
+    "2026-01-06_benfold-law.html": "f53ad8ce"
+  },
+  "blog/25-12-21-bcga.qmd": {
+    "25-12-21-bcga.html": "a5a28325"
+  },
+  "blog/25-12-22-1d-fem.md": {
+    "25-12-22-1d-fem.html": "5573cb72"
   }
 }
