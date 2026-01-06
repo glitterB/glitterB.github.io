@@ -90,6 +90,7 @@ This article demonstrated the working of a **Binary Coded Genetic Algorithm (BCG
 Binary encoding provides a simple and robust representation, but it also introduces some challenges. These limitations can be addressed by incorporating adaptive mutation rates, elitist selection, or transitioning to real-coded genetic algorithms for continuous optimization problems.
 
 Despite these constraints, BCGA remains a powerful optimization tool for problems where gradient information is unavailable or the search space is highly non-linear. The presented implementation serves as a clear baseline that can be readily extended for more complex objective functions and constraints.
+
 ## References
 
 1. D. K. Pratihar, *Soft Computing*, Narosa Publications, New Delhi, 2008
