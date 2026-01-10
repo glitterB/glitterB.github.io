@@ -20,12 +20,12 @@ Fuzzy sets implemented in Python.
 
 ### Blog posts
 
-My learnings while preparing for GATE 2025.  
-[Read post →](blog/25-02-22-gate-learn.qmd)
+My opinion on Engineering process.  
+[Read post →](blog/2025-12-06-engg-mess.qmd)
 
 ---
 
 
 <center>
-<p>&copy; 2025 Rushikesh Kulkarni | Built with <a href="https://quarto.org/">Quarto</a></p>
+<p>&copy; 2026 Rushikesh Kulkarni | Built with <a href="https://quarto.org/">Quarto</a></p>
 </center>
