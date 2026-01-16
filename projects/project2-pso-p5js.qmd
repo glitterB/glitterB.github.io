@@ -191,7 +191,7 @@ As the simulation runs, particles gradually converge toward the origin, demonstr
 ![PSO visualization](src/project2-pso.gif)
 
 The complete `p5.js` sketch can be accessed at the following link:
-[PSO Visualization on p5.js Editor](https://editor.p5js.org/TheLearningStudent/sketches/93u3vh99i)
+[PSO Visualization on p5.js Editor](https://editor.p5js.org/Rushikesh-k/sketches/93u3vh99i)
 
 ---
 
