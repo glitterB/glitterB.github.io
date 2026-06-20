@@ -18,8 +18,12 @@ website:
 format:
   html:
     theme:
-      - darkly
-      - brand
+      light:
+        - lux
+        - brand
+      dark:
+        - darkly
+        - brand
     css: styles.css
     toc: true
 

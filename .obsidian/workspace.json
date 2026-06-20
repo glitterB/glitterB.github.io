@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "01711642ff654b03",
+        "id": "b36b68de49d4842a",
         "type": "tabs",
         "children": [
           {
-            "id": "3a941eb8ae07a503",
+            "id": "6fbc51342250b7cd",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -179,8 +179,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "3a941eb8ae07a503",
+  "active": "26acd26bc609e64f",
   "lastOpenFiles": [
+    "blog/src/soap-plot.jpeg",
     "blog/25-12-21-bcga.qmd",
     "blog/25-12-21-bcga.md",
     "blog/25-12-22-1d-fem.md",
